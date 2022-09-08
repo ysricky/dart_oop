@@ -1,6 +1,8 @@
 void main() {
   Warrior warrior1 = Warrior('Cyclops');
   Warrior warrior2 = Warrior('Gandalf');
+  Warrior warrior3 = Warrior.offenseValue(50);
+  warrior3.name = 'Aragon';
 
   warrior1.attack(warrior2);
   warrior2.attack(warrior1);
@@ -17,6 +19,12 @@ void main() {
   warrior2.attack(warrior1);
 
   warrior2.shoutWin();
+
+  warrior3.powerUp();
+  warrior3.attack(warrior2);
+  warrior3.attack(warrior2);
+  warrior3.attack(warrior2);
+  warrior3.shoutWin();
 }
 
 class Warrior {
@@ -28,6 +36,8 @@ class Warrior {
 
   // constructor
   Warrior(this.name);
+
+  Warrior.offenseValue(this.offense);
 
   void attack(Warrior enemy) {
     if (enemy.health <= 0) {
