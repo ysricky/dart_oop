@@ -1,9 +1,6 @@
 void main() {
-  Warrior warrior1 = Warrior();
-  Warrior warrior2 = Warrior();
-
-  warrior1.name = 'Cyclops';
-  warrior2.name = 'Gandalf';
+  Warrior warrior1 = Warrior('Cyclops');
+  Warrior warrior2 = Warrior('Gandalf');
 
   warrior1.attack(warrior2);
   warrior2.attack(warrior1);
@@ -28,6 +25,9 @@ class Warrior {
   int offense = 10;
   int defense = 5;
   int powerUsage = 0;
+
+  // constructor
+  Warrior(this.name);
 
   void attack(Warrior enemy) {
     if (enemy.health <= 0) {
