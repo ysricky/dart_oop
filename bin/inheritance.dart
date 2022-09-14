@@ -9,15 +9,17 @@ class Animal {
 
 class Cat extends Animal {
   // Field overriding
+  @override
   String gender = 'Female';
 
   // Method overriding
+  @override
   void greet(String name) {
     print('Meow $name');
   }
 
   // Super keyword for accessing parent method
-  void parentGreet(String name){
+  void parentGreet(String name) {
     return super.greet(name);
   }
 }
